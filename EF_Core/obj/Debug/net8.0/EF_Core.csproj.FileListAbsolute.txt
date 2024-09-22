@@ -1,0 +1,14 @@
+C:\Users\vytra\RiderProjects\Pratice\EF_Core\bin\Debug\net8.0\EF_Core.deps.json
+C:\Users\vytra\RiderProjects\Pratice\EF_Core\bin\Debug\net8.0\EF_Core.dll
+C:\Users\vytra\RiderProjects\Pratice\EF_Core\bin\Debug\net8.0\EF_Core.pdb
+C:\Users\vytra\RiderProjects\Pratice\EF_Core\obj\Debug\net8.0\EF_Core.csproj.AssemblyReference.cache
+C:\Users\vytra\RiderProjects\Pratice\EF_Core\obj\Debug\net8.0\EF_Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\vytra\RiderProjects\Pratice\EF_Core\obj\Debug\net8.0\EF_Core.AssemblyInfoInputs.cache
+C:\Users\vytra\RiderProjects\Pratice\EF_Core\obj\Debug\net8.0\EF_Core.AssemblyInfo.cs
+C:\Users\vytra\RiderProjects\Pratice\EF_Core\obj\Debug\net8.0\EF_Core.csproj.CoreCompileInputs.cache
+C:\Users\vytra\RiderProjects\Pratice\EF_Core\obj\Debug\net8.0\EF_Core.dll
+C:\Users\vytra\RiderProjects\Pratice\EF_Core\obj\Debug\net8.0\refint\EF_Core.dll
+C:\Users\vytra\RiderProjects\Pratice\EF_Core\obj\Debug\net8.0\EF_Core.pdb
+C:\Users\vytra\RiderProjects\Pratice\EF_Core\obj\Debug\net8.0\ref\EF_Core.dll
+C:\Users\vytra\RiderProjects\Pratice\EF_Core\bin\Debug\net8.0\EF_Core.runtimeconfig.json
+C:\Users\vytra\RiderProjects\Pratice\EF_Core\obj\Debug\net8.0\EF_Core.genruntimeconfig.cache

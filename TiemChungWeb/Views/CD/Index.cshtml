@@ -1,0 +1,12 @@
+@model EF_Core.Model.CONGDAN
+
+@{
+    ViewBag.Title = "title";
+    Layout = "_Layout";
+}
+
+<h2>Them cong dan</h2>
+<form class="form-control" asp-action="AddCD" asp-controller="CD">
+    <label asp-for="MaCD"></label>
+    <input asp-for="MaCD"/>
+</form>
