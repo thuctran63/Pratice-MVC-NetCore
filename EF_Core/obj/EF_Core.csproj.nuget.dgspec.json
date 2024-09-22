@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\vytra\\RiderProjects\\Pratice\\EF_Core\\EF_Core.csproj": {}
+    "D:\\Code\\Pratice\\Pratice-MVC-NetCore\\EF_Core\\EF_Core.csproj": {}
   },
   "projects": {
-    "C:\\Users\\vytra\\RiderProjects\\Pratice\\EF_Core\\EF_Core.csproj": {
+    "D:\\Code\\Pratice\\Pratice-MVC-NetCore\\EF_Core\\EF_Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\vytra\\RiderProjects\\Pratice\\EF_Core\\EF_Core.csproj",
+        "projectUniqueName": "D:\\Code\\Pratice\\Pratice-MVC-NetCore\\EF_Core\\EF_Core.csproj",
         "projectName": "EF_Core",
-        "projectPath": "C:\\Users\\vytra\\RiderProjects\\Pratice\\EF_Core\\EF_Core.csproj",
-        "packagesPath": "C:\\Users\\vytra\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\vytra\\RiderProjects\\Pratice\\EF_Core\\obj\\",
+        "projectPath": "D:\\Code\\Pratice\\Pratice-MVC-NetCore\\EF_Core\\EF_Core.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "D:\\Code\\Pratice\\Pratice-MVC-NetCore\\EF_Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\vytra\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -77,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

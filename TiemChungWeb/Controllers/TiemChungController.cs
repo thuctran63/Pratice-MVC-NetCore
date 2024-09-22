@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace TiemChungWeb.Controllers;
 
-public class CDController : Controller
+public class TiemChungController : Controller
 {
     // GET
     public IActionResult Index()

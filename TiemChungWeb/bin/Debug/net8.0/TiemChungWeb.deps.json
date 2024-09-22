@@ -507,10 +507,7 @@
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.0-rc.1.24451.1"
         },
         "runtime": {
-          "EF_Core.dll": {
-            "assemblyVersion": "1.0.0",
-            "fileVersion": "1.0.0.0"
-          }
+          "EF_Core.dll": {}
         }
       }
     }

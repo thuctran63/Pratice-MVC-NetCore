@@ -11,7 +11,7 @@ public class TiemChungContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
-        optionsBuilder.UseSqlServer("Data Source=DESKTOP-OQH9VEI;Initial Catalog=TiemChung;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
+        optionsBuilder.UseSqlServer("Data Source=DESKTOP-KAS2D8H;Initial Catalog=TiemChung;Integrated Security=True;Encrypt=True;Trust Server Certificate=True");
     }
     
     protected override void OnModelCreating(ModelBuilder modelBuilder)
