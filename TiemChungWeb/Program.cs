@@ -7,6 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<TiemChungContext>();
 builder.Services.AddScoped<CongDanRepos>();
+builder.Services.AddScoped<TiemChungRepos>();
+builder.Services.AddScoped<MaLieuVXRepos>();
+builder.Services.AddScoped<MaLoaiVXRepos>();
+
 
 var app = builder.Build();
 

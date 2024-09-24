@@ -1,0 +1,103 @@
+@model EF_Core.Model.TIEMCHUNG
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success" id="successMessage">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+@if (TempData["Failed"] != null)
+{
+<div class="alert alert-warning" id="successMessage">
+    @TempData["Failed"]
+</div>
+}
+
+<h2>Nhập thông tin tiêm chủng</h2>
+
+<form class="border-danger" method="post" asp-action="AddTiemChung" asp-controller="TiemChung">
+    <div class="form-group row">
+        <label asp-for="MaCD" class="col-sm-2 col-form-label">Mã công dân</label>
+        <div class="col-sm-10">
+            <input type="text" id="staticEmail" asp-for="MaCD" class="form-control">
+            <span asp-validation-for="MaCD" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="MaLieuVX" class="col-sm-2 col-form-label">Mã liều vac-xin</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" asp-for="MaLieuVX" id="maLieuVX">
+            <span asp-validation-for="MaLieuVX" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="NgayTiemMui1" class="col-sm-2 col-form-label">Ngày tiêm mũi 1</label>
+        <div class="col-sm-10">
+            <input class="form-control" asp-for="NgayTiemMui1" type="date" id="ngayTiemMui1">
+            <span asp-validation-for="NgayTiemMui1" class="text-danger" id="validDateTiemMui1"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="NgayTiemMui2" class="col-sm-2 col-form-label" >Ngày tiêm mũi 2</label>
+        <div class="col-sm-10">
+            <input class="form-control" asp-for="NgayTiemMui2" type="date" id="ngayTiemMui2">
+            <span asp-validation-for="NgayTiemMui2" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="NgayDkTiemMui2" class="col-sm-2 col-form-label" >Ngày dự kiến tiêm mũi 2</label>
+        <div class="col-sm-10">
+            <input class="form-control" asp-for="NgayDkTiemMui2" type="date" id="ngayDkTiemMui2">
+            <span asp-validation-for="NgayDkTiemMui2" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="TrangThai" class="col-sm-2 col-form-label">Trạng thái</label>
+        <div class="col-sm-10">
+            <input class="form-control" asp-for="TrangThai" value="Đã tiêm mũi 1" >
+            <span asp-validation-for="TrangThai" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="GhiChu" class="col-sm-2 col-form-label">Ghi chú</label>
+        <div class="col-sm-10">
+            <textarea class="form-control" asp-for="GhiChu" rows="4"></textarea>
+        </div>
+    </div>
+    <div class="form-group row d-flex flex-row-reverse">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    setTimeout(function() {
+        var message = document.getElementById("successMessage");
+        if (message) {
+            message.style.display = 'none';
+        }
+    }, 5000);
+    $(document).ready(function (){
+        $("#ngayTiemMui1").on('input', function() {
+            const ngayTiemMui1 = $(this).val();
+            const maLieuVX = $("#maLieuVX").val(); // Giả sử bạn có một select để chọn loại vacxin
+            console.log(maLieuVX)
+            console.log("Ngày tiêm mũi 1:", ngayTiemMui1);
+
+            // Gọi API để lấy số ngày tiêm nhắc
+            $.get(`/TiemChung/GetSoNgayTiemNhac?maLieuVX=${maLieuVX}`, function(soNgayTiemNhac) {
+                if (ngayTiemMui1) {
+                    const date1 = new Date(ngayTiemMui1); // Chuyển đổi ngày từ datepicker
+                    date1.setDate(date1.getDate() + soNgayTiemNhac); // Cộng số ngày tiêm nhắc
+                    const ngayDuKienMui2 = date1.toISOString().split('T')[0]; // Định dạng lại thành YYYY-MM-DD
+
+                    $("#ngayDkTiemMui2").val(ngayDuKienMui2); // Cập nhật trường ngày dự kiến
+                }
+            }).fail(function() {
+                console.log("Có lỗi khi gọi API để lấy số ngày tiêm nhắc.");
+            });
+        });
+    });
+</script>
+

@@ -1,0 +1,65 @@
+@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<TiemChungWeb.Models.TiemChungViewModel>
+
+<div>
+    @await Component.InvokeAsync("NavTiemChung")
+</div>
+
+<h2>Danh sách tiêm chủng</h2>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+    <tr>
+        <th>Mã công dân</th>
+        <th>Tên công dân</th>
+        <th>Mã liều vắc xin</th>
+        <th>Tên loại vắc xin</th>
+        <th>Ngày tiêm mũi 1</th>
+        <th>Ngày dự kiến tiêm mũi 2</th>
+        <th>Ngày tiêm mũi 2</th>
+        <th>Trạng thái</th>
+        <th>Ghi chú</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MaCD</td>
+            <td>@item.TenCD</td>
+            <td>@item.MaLieuVX</td>
+            <td>@item.TenLoaiVacxin</td>
+            <td>@item.NgayTiemMui1.ToString("dd/MM/yyyy")</td>
+            <td>@item.NgayDkTiemMui2.ToString("dd/MM/yyyy")</td>
+            <td>@item.NgayTiemMui2.ToString("dd/MM/yyyy")</td>
+            <td>
+                @if (item.TrangThai == 1)
+                {
+                    <span class="badge badge-success">Đã tiêm mũi 1</span>
+                }
+                else
+                {
+                    <span class="badge badge-warning">Chưa tiêm</span>
+                }
+            </td>
+            <td>@item.GhiChu</td>
+            <td>
+                <a href="@Url.Action("Edit", "TiemChung", new { id = item.MaCD })" class="btn btn-sm btn-primary">Edit</a>
+                <a href="@Url.Action("Delete", "TiemChung", new { id = item.MaCD })" class="btn btn-sm btn-danger" onclick="return confirm('Bạn có chắc chắn muốn xóa không?');">Xóa</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+@Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }), new PagedListRenderOptions()
+{
+    DisplayLinkToFirstPage = PagedListDisplayMode.Always,
+    DisplayLinkToLastPage = PagedListDisplayMode.Always,
+    DisplayLinkToNextPage = PagedListDisplayMode.Always,
+    DisplayLinkToPreviousPage = PagedListDisplayMode.Always,
+
+    LiElementClasses = new string[] { "page-item" },
+    PageClasses = new string[] { "page-link" }
+})

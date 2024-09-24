@@ -1,11 +1,13 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EF_Core.Model;
 
 public class LOAIVACXIN
 {
     [Key]
-    public string MaLoaiVX { get; set; }
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int MaLoaiVX { get; set; }
     public string TenLoaiVX { get; set; }
     public string NuocSX { get; set; }
     public int SoNgayTiemNhac  { get; set; }

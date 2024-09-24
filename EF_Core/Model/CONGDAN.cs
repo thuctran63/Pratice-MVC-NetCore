@@ -1,11 +1,13 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EF_Core.Model;
 
 public class CONGDAN
 {
     [Key]
-    public string MaCD { get; set; }
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int MaCD { get; set; }
     public string HoTen { get; set; }
     public DateTime NgaySinh { get; set; }
     public string CMND { get; set; }

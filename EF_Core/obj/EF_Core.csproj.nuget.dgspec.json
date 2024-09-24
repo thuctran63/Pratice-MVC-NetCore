@@ -59,6 +59,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[9.0.0-rc.1.24451.1, )"
+            },
+            "X.PagedList": {
+              "target": "Package",
+              "version": "[10.2.1, )"
             }
           },
           "imports": [

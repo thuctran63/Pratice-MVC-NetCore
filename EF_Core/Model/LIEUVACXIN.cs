@@ -6,9 +6,10 @@ namespace EF_Core.Model;
 public class LIEUVACXIN
 {
     [Key]
-    public string MaLieuVX { get; set; }
+    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    public int MaLieuVX { get; set; }
     public int SoLo { get; set; }
-    public string MaLoaiVX { get; set; }
+    public int MaLoaiVX { get; set; }
     public DateTime NgaySanXuat { get; set; }
     public DateTime NgayHetHan { get; set; }
     

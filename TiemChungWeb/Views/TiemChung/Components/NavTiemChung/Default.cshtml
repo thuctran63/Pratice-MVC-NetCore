@@ -1,0 +1,22 @@
+@model TiemChungWeb.Models.TimKiemViewModel
+
+<div class="nav-tiem-chung">
+    <h3>Tìm kiếm thông tin tiêm chủng</h3>
+    <form method="get" action="@Url.Action("ListTiemChung", "TiemChung")"> <!-- Thay đổi tùy thuộc vào controller và action bạn muốn gửi -->
+        <div class="form-group">
+            <label for="maCD">Mã công dân:</label>
+            <input type="text" class="form-control" id="maCD" name="MaCD" value="@Model.MaCD" />
+        </div>
+        <div class="form-group">
+            <label for="maLieuVX">Loại vắc-xin:</label>
+            <select class="form-control" id="maLieuVX" name="MaLieuVX">
+                <option value="">-- Chọn loại vắc-xin --</option>
+                @foreach (var item in Model.LoaiVacxinList)
+                {
+                    <option value="@item.MaLoaiVX">@item.TenLoaiVX</option>
+                }
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Tìm kiếm</button>
+    </form>
+</div>

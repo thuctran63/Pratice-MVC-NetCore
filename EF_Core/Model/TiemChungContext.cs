@@ -21,21 +21,21 @@ public class TiemChungContext : DbContext
         modelBuilder.Entity<LOAIVACXIN>().HasData(
             new LOAIVACXIN
             {
-                MaLoaiVX = "VX001",
+                MaLoaiVX = 1,
                 TenLoaiVX = "AstraZeneca",
                 NuocSX = "Anh",
                 SoNgayTiemNhac = 84
             },
             new LOAIVACXIN
             {
-                MaLoaiVX = "VX002",
+                MaLoaiVX = 2,
                 TenLoaiVX = "Pfizer",
                 NuocSX = "Mỹ",
                 SoNgayTiemNhac = 21
             },
             new LOAIVACXIN
             {
-                MaLoaiVX = "VX003",
+                MaLoaiVX = 3,
                 TenLoaiVX = "Sputnik V",
                 NuocSX = "Nga",
                 SoNgayTiemNhac = 21
@@ -45,25 +45,25 @@ public class TiemChungContext : DbContext
         modelBuilder.Entity<LIEUVACXIN>().HasData(
             new LIEUVACXIN
             {
-                MaLieuVX = "VX001-001",
+                MaLieuVX = 1,
+                MaLoaiVX = 1,
                 SoLo = 1,
-                MaLoaiVX = "VX001",
                 NgaySanXuat = new DateTime(2021, 1, 1),
                 NgayHetHan = new DateTime(2022, 1, 1)
             },
             new LIEUVACXIN
             {
-                MaLieuVX = "VX002-001",
+                MaLieuVX = 2,
+                MaLoaiVX = 1,
                 SoLo = 1,
-                MaLoaiVX = "VX002",
                 NgaySanXuat = new DateTime(2021, 1, 1),
                 NgayHetHan = new DateTime(2022, 1, 1)
             },
             new LIEUVACXIN
             {
-                MaLieuVX = "VX003-001",
+                MaLieuVX = 3,
+                MaLoaiVX = 2,
                 SoLo = 1,
-                MaLoaiVX = "VX003",
                 NgaySanXuat = new DateTime(2021, 1, 1),
                 NgayHetHan = new DateTime(2022, 1, 1)
             }
@@ -72,7 +72,7 @@ public class TiemChungContext : DbContext
         modelBuilder.Entity<CONGDAN>().HasData(
             new CONGDAN
             {
-                MaCD = "CD001",
+                MaCD = 1,
                 HoTen = "Nguyễn Văn A",
                 NgaySinh = new DateTime(1990, 1, 1),
                 CMND = "123456789",

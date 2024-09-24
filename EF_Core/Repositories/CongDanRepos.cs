@@ -16,7 +16,7 @@ public class CongDanRepos
         return _context.CONGDANs.ToList();
     }
     
-    public CONGDAN GetByMaCD(string maCD)
+    public CONGDAN GetByMaCD(int maCD)
     {
         return _context.CONGDANs.Find(maCD);
     }
@@ -39,7 +39,7 @@ public class CongDanRepos
         _context.SaveChanges();
     }
     
-    public void Delete(string maCD)
+    public void Delete(int maCD)
     {
         var congdan = GetByMaCD(maCD);
         if (congdan != null)
@@ -48,7 +48,7 @@ public class CongDanRepos
         }
     }
     
-    public bool Exists(string maCD)
+    public bool Exists(int maCD)
     {
         return _context.CONGDANs.Any(e => e.MaCD == maCD);
     }
